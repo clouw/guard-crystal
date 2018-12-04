@@ -1,0 +1,6 @@
+directories %w(src spec)
+
+guard :crystal do
+  watch(%r{^spec/(.*)_spec\.cr})
+  watch(%r{^src/[^/+]+/(.+)\.cr$})  { |m| "spec/#{m[1]}_spec.cr" }
+end
